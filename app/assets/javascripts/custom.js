@@ -7,7 +7,11 @@ window.setupHome = function(){
     }else{
       projectRow.animate( { scrollLeft: '-=460' }, 500);
     }
-  })
+  });
+
+  $('.cover-item').on('click', function(){
+    console.log('foo')
+  });
 };
 
 $(document).ready(window.setupHome);

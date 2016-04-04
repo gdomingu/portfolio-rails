@@ -16,14 +16,30 @@
   .cover-item {
     position: relative;
     display: inline-block;
-    margin-right: 16px;
+    margin-right: 1rem;
     box-shadow: 2px 2px 4px #bbb;
     border-top-right-radius: 4px;
     height: 100%;
     vertical-align: bottom;
+    cursor: pointer;
   }
 }
 .carousel-control {
   width: 5%;
   z-index: 5;
 }
+#project-detail {
+  margin-top: 1rem;
+  background-color: rebeccapurple;
+  height: 30rem;
+  padding: 1rem;
+  color: #A7A69D;
+    h3, h4{
+      color:white;
+    }
+    .carousel{
+      width: 100%;
+      height: auto;
+    }
+}
+
