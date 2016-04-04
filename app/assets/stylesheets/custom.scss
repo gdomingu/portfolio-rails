@@ -1,0 +1,29 @@
+.header {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+.profile-picture {
+  width: 100%;
+}
+
+#project-row {
+  height: 300px;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  .cover-item {
+    position: relative;
+    display: inline-block;
+    margin-right: 16px;
+    box-shadow: 2px 2px 4px #bbb;
+    border-top-right-radius: 4px;
+    height: 100%;
+    vertical-align: bottom;
+  }
+}
+.carousel-control {
+  width: 5%;
+  z-index: 5;
+}
