@@ -42,120 +42,39 @@
     #project-carousel.carousel
       .carousel-inner
         #project-row
-          - 15.times do
-            = render 'cover_item'
+          - @project_hash.keys.each do |name|
+            = render 'cover_item', project_name: name
       %a{class: "left carousel-control", role: "button", 'data-slide' => "prev"}
         %span{class: "icon-prev", 'aria-hidden'=> "true"}
       %a{class: "right carousel-control",role: "button", 'data-slide' => "next"}
         %span{class: "icon-next", 'aria-hidden'=> "true"}
 
-    #project-detail
-      .row
-        .col-sm-6
-          %h3 Smitten
-          %p
-            %a{:href => "http://www.smitten.us"}Smitten
-            was my final project built in the last week of General Assembly's
-            %a{:href => "https://generalassemb.ly/education/web-development-immersive"}Web Development Immersive.
-          %p
-            The team consisted of 3 of my amazing classmates:
-            %a{:href => "http://bayleefeore.com"}Baylee,
-            %a{:href => "http://ykitten.github.io"}Ykat,
-            and
-            %a{:href => ""}Eric,
-            all who like myself had no previous knowledge of programming before this class.
-          %p Smitten is an app created to help facilitate love at first sight. Being young and romantically optimistic, our team decided to make an app that will help you connect with the boy or girl you fall in love with while in line at the grocery store or at the laundromat.
-        .col-sm-6
-          .row
-            .col-sm-6
-              %h4 Highlights:
-              %ul
-                %li One page mobile web app using Ajax
-                %li Swipe to navigate functionality
-                %li Social login with Facebook
-                %li User messaging
-            .col-sm-6
-              #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
-                %ol.carousel-indicators
-                  %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-                  %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-                  %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-                .carousel-inner{:role => "listbox"}
-                  .carousel-item.active
-                    =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/landing.jpg', class: 'screenshot')
-                  .carousel-item
-                    =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/dashboard.jpg', class: 'screenshot')
-                  .carousel-item
-                    =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/newspark.jpg', class: 'screenshot')
-                  .carousel-item
-                    =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/feed.jpg')
-                %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
-                  %span.icon-prev{"aria-hidden" => "true"}
-                  %span.sr-only Previous
-                %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
-                  %span.icon-next{"aria-hidden" => "true"}
-                  %span.sr-only Next
+- @project_hash.keys.each do |name|
+  .project-detail{id: "#{name}-detail"}
+    = render "#{name}_detail"
 
-  #dlp
-    %h2 SF Day Labor Program
-    .column1
-      .content
-        %h4 About
-        %p
-          %a{:href => "http://sfdaylabor.herokuapp.com/"}This
-          is a rails app I created by request of the SF Day Labor Program and Women's Collective. It was my first time working for a client.
-        %p I was pleased to discover that building something that was going to be used by real people while working with someone who had zero technical experience was very rewarding. The client told me about the problems within the organization, and I built something to solve those problems.
-    .column2
-      .content
-        %h4 Main Goals:
-        %ul
-          %li Set up a relational database to help organize all the information about the members of the program.
-          %li Build an admin interface tailored to the employees of the organization thereby improving efficiency so they can spend less time with busy work.
-          %li Create new functionality to improve user experience for potential employers who come to the website.
-    .column1
-      %a{:href => "http://sfdaylabor.herokuapp.com/", :class => "tosite"}
+#clouds
+  %h2 Clouds
+  .columnfull
+    .content
+      %h4 About
+      %p
+        %a{:href => "clouds"}Clouds
+        is my old portfolio that I created right when I ended WDI at GA. I was feeling really drained after such an intense 12-week program that I wanted to just go to the park, relax and watch the clouds float by. This was created to give that sensation. It also has a Japanese version. If you feel so inclined, you can pretend you are watching clouds in Japan.
+      %p One of the things I discovered during this course is the childlike bliss and happiness I get from seeing simple JavaScript animations. Remember those really annoying stars or skittles that followed your cursor around on websites back in the early 90's? Yeah I loved those...
+      %p Are you ready to float away?
+      %a{:href => "clouds", :class => "tosite"}
         %i{:class => "icon-rocket"}
-          To Site
-    .screenshot
-      #dlpscreenshot
-      #dlpscreenshot2
-  #hanoi
-    %h2 Towers of Hanoi
-    .columnfull
-      .content
-        %h4 About
-        %p
-          %a{:href => "towersofhanoi"}Towers of Hanoi
-          is a JavaScript game where the goal is to get all the donuts stacked up in the right order on the rightmost peg. I decided to utilize jQuery UI to add a little to the user experience by asking them to drag the "donuts" over rather than just clicking.
-        %p While this was originally built in a rails environment, because it is 100% a "front-end" app, I simply moved it over to a static page on this pofolio. It uses no ruby, only HAML, JavaScript, and CSS.
-        %p Please enjoy!
-        %a{:href => "towersofhanoi", :class => "tosite"}
-          %i{:class => "icon-rocket"}
-          To Site
-    .screenshot
-      #hanoiscreenshot
-  #clouds
-    %h2 Clouds
-    .columnfull
-      .content
-        %h4 About
-        %p
-          %a{:href => "clouds"}Clouds
-          is my old portfolio that I created right when I ended WDI at GA. I was feeling really drained after such an intense 12-week program that I wanted to just go to the park, relax and watch the clouds float by. This was created to give that sensation. It also has a Japanese version. If you feel so inclined, you can pretend you are watching clouds in Japan.
-        %p One of the things I discovered during this course is the childlike bliss and happiness I get from seeing simple JavaScript animations. Remember those really annoying stars or skittles that followed your cursor around on websites back in the early 90's? Yeah I loved those...
-        %p Are you ready to float away?
-        %a{:href => "clouds", :class => "tosite"}
-          %i{:class => "icon-rocket"}
-          Float Away
-    .screenshot
-      #cloudscreenshot
-  .links
-    %a{:name => "contact"}
-    %a{:href => 'mailto:gabe.p.dominguez@gmail.com'}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/email.png')
-    %a{:href => "https://github.com/gdomingu"}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/github.png')
-    %a{:href => "https://twitter.com/Gabudomingu"}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/twitter.png')
-    %a{:href => "http://www.linkedin.com/pub/gabriel-dominguez/29/495/667/"}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/linkedin.png')
+        Float Away
+  .screenshot
+    #cloudscreenshot
+.links
+  %a{:name => "contact"}
+  %a{:href => 'mailto:gabe.p.dominguez@gmail.com'}
+    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/email.png')
+  %a{:href => "https://github.com/gdomingu"}
+    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/github.png')
+  %a{:href => "https://twitter.com/Gabudomingu"}
+    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/twitter.png')
+  %a{:href => "http://www.linkedin.com/pub/gabriel-dominguez/29/495/667/"}
+    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/linkedin.png')

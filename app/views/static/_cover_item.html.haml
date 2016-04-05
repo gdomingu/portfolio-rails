@@ -1,2 +1,2 @@
 .cover-item
-  =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/landing.jpg')
+  =image_tag(@project_hash[project_name][:thumbnail_url], 'data-project-name' => project_name)
