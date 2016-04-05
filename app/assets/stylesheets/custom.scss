@@ -6,40 +6,57 @@
 .profile-picture {
   width: 100%;
 }
-
-#project-row {
-  height: 300px;
-  width: 100%;
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  .cover-item {
-    position: relative;
-    display: inline-block;
-    margin-right: 1rem;
-    box-shadow: 2px 2px 4px #bbb;
-    border-top-right-radius: 4px;
-    height: 100%;
-    vertical-align: bottom;
-    cursor: pointer;
+#project-carousel {
+  #project-row {
+    height: 19rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 1.2rem;
+    .cover-item {
+      height: 100%;
+      width: initial;
+      position: relative;
+      display: inline-block;
+      margin-right: 1rem;
+      box-shadow: 2px 2px 4px #bbb;
+      border-top-right-radius: 4px;
+      vertical-align: bottom;
+      cursor: pointer;
+      img{
+        height: 100%;
+      }
+    }
+    .arrow-down{
+      content: '';
+      width: 0; 
+      height: 0; 
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid black;
+      position:absolute;
+      left: 40%;
+      bottom: -20px;
+    }
+  }
+  .carousel-control {
+    width: 5%;
+    z-index: 5;
+    height: 95%;
   }
 }
-.carousel-control {
-  width: 5%;
-  z-index: 5;
-}
 #project-detail {
-  margin-top: 1rem;
   background-color: rebeccapurple;
   height: 30rem;
   padding: 1rem;
   color: #A7A69D;
-    h3, h4{
-      color:white;
-    }
-    .carousel{
-      width: 100%;
-      height: auto;
-    }
+  h3, h4{
+    color:white;
+  }
+  .carousel{
+    width: 100%;
+    height: auto;
+  }
 }
 

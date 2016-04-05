@@ -9,8 +9,12 @@ window.setupHome = function(){
     }
   });
 
-  $('.cover-item').on('click', function(){
-    console.log('foo')
+  $('.cover-item img').on('click', function(){
+    var _this = $(this)
+    $('.cover-item img').css('border', 'none')
+    _this.css("border", "10px solid black")
+    $('.arrow-down').remove()
+    _this.after("<div class='arrow-down'></div>")
   });
 };
 
