@@ -10,18 +10,25 @@ window.setupHome = function(){
   });
 
   $('.cover-item img').on('click', function(){
-    $('.project-detail').fadeOut();
-    var _this = $(this)
-    $('.cover-item img').css('border', 'none')
-    _this.css("border", "10px solid black")
-    checkIfInView(_this)
-    $('.arrow-down').remove()
-    _this.after("<div class='arrow-down'></div>")
-    var detail = "#" + _this.data('project-name') + "-detail"
-    $(detail).fadeIn();
+    resetToDefault();
+    var _this = $(this);
+    addSelectedBorder(_this);
+    scrollIntoViewIfNeeded(_this);
+    fadeInDetail(_this);
   });
 
-  function checkIfInView(element){
+  function resetToDefault(){
+    $('.project-detail').fadeOut();
+    $('.arrow-down').remove();
+    $('.cover-item img').css('border', 'none');
+  };
+
+  function addSelectedBorder(element){
+    element.css("border", "10px solid black");
+    element.after("<div class='arrow-down'></div>");
+  };
+
+  function scrollIntoViewIfNeeded(element){
     var elementLeftOffset = element.offset().left
     var elementRightOffset = elementLeftOffset + element.width()
 
@@ -29,11 +36,13 @@ window.setupHome = function(){
       $('#project-row').animate({scrollLeft: '-=460'}, 500);
     }else if (elementRightOffset > $('#project-carousel').width()) {
         $('#project-row').animate({scrollLeft: '+=460'}, 500);
-        return false;
-    }else{
-      return true;
     }
-  }
+  };
+
+  function fadeInDetail(element){
+    var detail = "#" + element.data('project-name') + "-detail";
+    $(detail).fadeIn();
+  };
 };
 
 $(document).ready(window.setupHome);
