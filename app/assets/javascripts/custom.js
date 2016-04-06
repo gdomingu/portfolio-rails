@@ -29,6 +29,7 @@ window.setupHome = function(){
   };
 
   function scrollIntoViewIfNeeded(element){
+    $('#projects')[0].scrollIntoView();
     var elementLeftOffset = element.offset().left
     var elementRightOffset = elementLeftOffset + element.width()
 
@@ -36,13 +37,15 @@ window.setupHome = function(){
       $('#project-row').animate({scrollLeft: '-=460'}, 500);
     }else if (elementRightOffset > $('#project-carousel').width()) {
         $('#project-row').animate({scrollLeft: '+=460'}, 500);
-    }
+    };
   };
 
   function fadeInDetail(element){
     var detail = "#" + element.data('project-name') + "-detail";
     $(detail).fadeIn();
   };
+
+  $('.cover-item img').first().trigger('click');
 };
 
 $(document).ready(window.setupHome);

@@ -35,9 +35,8 @@
           %li Capybara
 
 .row#projects
-  %a{:name => "projects"}
   .col-md-12
-    %h3 Past Projects
+    %p.lead Past Projects
   .col-md-12
     #project-carousel.carousel
       .carousel-inner
@@ -50,31 +49,16 @@
         %span{class: "icon-next", 'aria-hidden'=> "true"}
 
 - @project_hash.keys.each do |name|
-  .project-detail{id: "#{name}-detail"}
+  .jumbotron.project-detail{id: "#{name}-detail"}
     = render "#{name}_detail"
 
-#clouds
-  %h2 Clouds
-  .columnfull
-    .content
-      %h4 About
-      %p
-        %a{:href => "clouds"}Clouds
-        is my old portfolio that I created right when I ended WDI at GA. I was feeling really drained after such an intense 12-week program that I wanted to just go to the park, relax and watch the clouds float by. This was created to give that sensation. It also has a Japanese version. If you feel so inclined, you can pretend you are watching clouds in Japan.
-      %p One of the things I discovered during this course is the childlike bliss and happiness I get from seeing simple JavaScript animations. Remember those really annoying stars or skittles that followed your cursor around on websites back in the early 90's? Yeah I loved those...
-      %p Are you ready to float away?
-      %a{:href => "clouds", :class => "tosite"}
-        %i{:class => "icon-rocket"}
-        Float Away
-  .screenshot
-    #cloudscreenshot
-.links
-  %a{:name => "contact"}
-  %a{:href => 'mailto:gabe.p.dominguez@gmail.com'}
-    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/email.png')
-  %a{:href => "https://github.com/gdomingu"}
-    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/github.png')
-  %a{:href => "https://twitter.com/Gabudomingu"}
-    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/twitter.png')
-  %a{:href => "http://www.linkedin.com/pub/gabriel-dominguez/29/495/667/"}
-    %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/linkedin.png')
+.row#contact
+  .col-sm-12
+    %a{:href => 'mailto:gabe.p.dominguez@gmail.com'}
+      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/email.png')
+    %a{:href => "https://github.com/gdomingu"}
+      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/github.png')
+    %a{:href => "https://twitter.com/Gabudomingu"}
+      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/twitter.png')
+    %a{:href => "http://www.linkedin.com/pub/gabriel-dominguez/29/495/667/"}
+      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/linkedin.png')
