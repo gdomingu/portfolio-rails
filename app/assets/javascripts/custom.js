@@ -13,12 +13,12 @@ window.setupHome = function(){
     resetToDefault();
     var _this = $(this);
     addSelectedBorder(_this);
-    scrollIntoViewIfNeeded(_this);
     fadeInDetail(_this);
+    scrollIntoViewIfNeeded(_this);
   });
 
   function resetToDefault(){
-    $('.project-detail').fadeOut();
+    $('.project-detail').hide();
     $('.arrow-down').remove();
     $('.cover-item img').css('border', 'none');
   };
@@ -42,7 +42,7 @@ window.setupHome = function(){
 
   function fadeInDetail(element){
     var detail = "#" + element.data('project-name') + "-detail";
-    $(detail).fadeIn();
+    $(detail).fadeIn('slow');
   };
 
   $('.cover-item img').first().trigger('click');

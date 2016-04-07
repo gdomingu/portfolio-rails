@@ -1,0 +1,55 @@
+#hanoi-container{
+  background-image: url('http://2.bp.blogspot.com/-0nEXgW-gbmE/ViC6rYHEz9I/AAAAAAAAAIE/WVZIkXqkWIM/s1600/tran-quoc-pagoda.jpg');
+  -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   height: 18rem;
+   color:black;
+   padding: 1rem;
+    h1{
+      text-align: center;
+      color:#FCF6CF;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+    .card{
+      max-width: 20rem;
+      margin: 0 auto;
+      #movescounter {
+        p {
+          display: inline-block;
+        }
+      }
+    }
+    .game-wrapper{
+      text-align: center;
+    }
+
+    #pegcontainer{
+      margin-top: 1rem;
+      .peg-outer {
+        margin-right:15px;
+        display: inline-block;
+        .peg{
+          width: 75px;
+          height: 100px;
+          border: 1px solid;
+          background-color: #cccccc;
+          display: table-cell;
+          vertical-align: bottom;
+          font-size: 9px;
+          &:last-child {
+            margin-right:0px;
+          }
+        }
+      }
+      .disc{
+        margin-bottom: 2px;
+        height:15px;
+        width:100%;
+        background-color: brown;
+      }
+    }
+
+}
+
