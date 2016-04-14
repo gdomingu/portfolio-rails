@@ -1,0 +1,20 @@
+.row
+  .col-sm-6
+    %h3 NASA APOD Gem
+    %p
+      =link_to 'nasa_apod', 'https://github.com/gdomingu/nasa_apod' 
+      is a ruby gem that I created as a wrapper for the 
+      =link_to 'NASA Astronomy Picture of the Day', 'http://apod.nasa.gov/apod/astropix.html'
+      API. I decided to build this in order to practice creating a gem with bundler and because I am interested in space. 
+    %p Feel free to switch the dates to see different pictures.
+    = form_tag switch_date_path, remote: true, class: 'form-inline' do
+      .form-group
+        = date_field :date, nil, value: @nasa_apod.date, min: Date.parse("1995-06-16"), max: Date.today, class: 'form-control'
+      = submit_tag "Submit", class: 'btn btn-primary'
+  .col-sm-6
+    .card
+      =image_tag @nasa_apod.url, class: "card-img-top img-fluid", alt: @nasa_apod.title
+      .card-block
+        %h4.card-title= @nasa_apod.title
+        %h5= @nasa_apod.date
+        %p.card-text= @nasa_apod.explanation

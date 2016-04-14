@@ -11,7 +11,7 @@
     height: 15rem;
     width: 100%;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     padding-bottom: 1.2rem;
     .cover-item {
@@ -46,16 +46,28 @@
   .carousel-control {
     width: 5%;
     z-index: 5;
-    height: 93%;
+    height: 92%;
+    opacity: 1;
   }
 }
 .project-detail {
   background-color: rebeccapurple;
   display:none;
-  color: #eceeef;
+  p, ul{
+    color: #eceeef;
+  }
   min-height: 24rem;
+  padding: 2rem 2rem;
   h3, h4{
     color:white;
+  }
+  input[type="date"].form-control{
+    line-height: 1.25rem;
+  }
+  .card{
+    h4, p{
+      color: black;
+    }
   }
   .carousel{
     width: 100%;
@@ -65,9 +77,5 @@
 
 #contact{
   text-align: center;
-}
-
-.jumbotron.project-detail{
-  padding: 2rem 2rem;
 }
 

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static#home'
 
+  post 'switch_date', to: 'static#switch_date', as: 'switch_date'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
