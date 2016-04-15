@@ -11,11 +11,13 @@
   }
   #about{
     background-color: #BEB8EB;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .jumbotron{
       text-align: center;
       background-color: inherit;
-      padding-top:22%;
-      margin-bottom: 17%;
       .profile-picture{
         width:5.5rem;
       }
