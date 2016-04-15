@@ -9,15 +9,15 @@ class StaticController < ApplicationController
       tip_calc: {
         thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/tip_calc.png'
       },
+      move_loot: {
+        thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/ml_user_dash.png'
+      },
       smitten: {
         thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/landing.jpg'
       },
-      dlp: {
-        thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/dlphome.png'
-      },
       hanoi: {
         thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/hanoiss.png'
-      }
+      },
     }
     expires_in Time.now.end_of_day - Time.now, public: true
     render 'home'

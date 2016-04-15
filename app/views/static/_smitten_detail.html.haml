@@ -1,5 +1,5 @@
 .row
-  .col-sm-6
+  .col-sm-8
     %h3 Smitten
     %p
       %a{:href => "http://www.smitten.us"}Smitten
@@ -13,33 +13,31 @@
       %a{:href => ""}Eric,
       all who like myself had no previous knowledge of programming before this class.
     %p Smitten is an app created to help facilitate love at first sight. Being young and romantically optimistic, our team decided to make an app that will help you connect with the boy or girl you fall in love with while in line at the grocery store or at the laundromat.
-  .col-sm-6
-    .row
-      .col-sm-6
-        %h4 Highlights:
-        %ul
-          %li One page mobile web app using Ajax
-          %li Swipe to navigate functionality
-          %li Social login with Facebook
-          %li User messaging
-      .col-sm-6
-        #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
-          %ol.carousel-indicators
-            %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-            %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-            %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-          .carousel-inner{:role => "listbox"}
-            .carousel-item.active
-              =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/landing.jpg', class: 'screenshot')
-            .carousel-item
-              =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/dashboard.jpg', class: 'screenshot')
-            .carousel-item
-              =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/newspark.jpg', class: 'screenshot')
-            .carousel-item
-              =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/feed.jpg')
-          %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
-            %span.icon-prev{"aria-hidden" => "true"}
-            %span.sr-only Previous
-          %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
-            %span.icon-next{"aria-hidden" => "true"}
-            %span.sr-only Next
+    %br
+    %h4 Highlights:
+    %ul
+      %li One page mobile web app using Ajax
+      %li Swipe to navigate functionality
+      %li Social login with Facebook
+      %li User messaging
+  .col-sm-4
+    #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+        %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+        %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+      .carousel-inner{:role => "listbox"}
+        .carousel-item.active
+          =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/landing.jpg', class: 'screenshot')
+        .carousel-item
+          =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/dashboard.jpg', class: 'screenshot')
+        .carousel-item
+          =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/newspark.jpg', class: 'screenshot')
+        .carousel-item
+          =image_tag('https://s3-us-west-2.amazonaws.com/gabe-random/feed.jpg')
+      %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
+        %span.icon-prev{"aria-hidden" => "true"}
+        %span.sr-only Previous
+      %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
+        %span.icon-next{"aria-hidden" => "true"}
+        %span.sr-only Next
