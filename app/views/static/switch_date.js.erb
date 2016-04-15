@@ -1,1 +1,5 @@
-$('#nasa_apod-detail').html("<%= j render 'nasa_apod_detail'%>");
+<% if @error %>
+  $('.error').fadeIn();
+<% else %>
+  $('#nasa_apod-detail').html("<%= j render 'nasa_apod_detail'%>");
+<% end %>

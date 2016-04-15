@@ -1,81 +1,104 @@
-.header {
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: .05rem solid #e5e5e5;
-}
-.profile-picture {
-  width: 100%;
-}
-#project-carousel {
-  #project-row {
-    height: 15rem;
-    width: 100%;
-    white-space: nowrap;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding-bottom: 1.2rem;
-    .cover-item {
-      height: 100%;
-      width: initial;
-      position: relative;
-      display: inline-block;
-      margin-right: 1rem;
-      box-shadow: 2px 2px 4px #bbb;
-      border-top-right-radius: 4px;
-      vertical-align: bottom;
-      cursor: pointer;
-      img{
-        height: 100%;
+.site-wrapper{
+  nav{
+    background-color: initial;
+    .navbar-brand{
+      padding-bottom: 0;
+    }
+    .nav{
+      padding-top: 1.5rem;
+    }
+
+  }
+  #about{
+    background-color: rgba(224,226,255,1);
+    .jumbotron{
+      text-align: center;
+      background-color: inherit;
+      padding-top:22%;
+      margin-bottom: 17%;
+      .profile-picture{
+        width:5.5rem;
       }
     }
-    .arrow-down{
-      content: '';
-      width: 0; 
-      height: 0; 
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 20px solid black;
-      position:absolute;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      bottom: -20px;
+  }
+  #projects{
+    padding-top: 5rem;
+    background-color: #D6F7FF;
+    .title{
+      display: inline-block;
+    }
+    #project-carousel {
+      margin-top: 2.5rem;
+      #project-row {
+        height: 15rem;
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 1.2rem;
+        background-color: #55595C;
+        background-clip: content-box;
+        .cover-item {
+          height: 100%;
+          width: initial;
+          position: relative;
+          display: inline-block;
+          margin-right: 0.2rem;
+          border-top-right-radius: 4px;
+          vertical-align: bottom;
+          cursor: pointer;
+          img{
+            height: 100%;
+          }
+        }
+        .arrow-down{
+          content: '';
+          width: 0; 
+          height: 0; 
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 20px solid black;
+          position:absolute;
+          margin-left: auto;
+          margin-right: auto;
+          left: 0;
+          right: 0;
+          bottom: -20px;
+        }
+      }
+      .carousel-control {
+        width: 5%;
+        z-index: 5;
+        height: 92%;
+        opacity: 1;
+      }
+    }
+    .project-detail {
+      background-color: rgba(2,167,216,0.31);
+      display:none;
+      min-height: 24rem;
+      padding: 2rem 2rem;
+      input[type="date"].form-control{
+        line-height: 1.25rem;
+      }
+      .carousel{
+        width: 100%;
+        height: auto;
+      }
+      a{
+        color:#e0ebe8
+      }
+      .error{
+        display: none;
+      }
     }
   }
-  .carousel-control {
-    width: 5%;
-    z-index: 5;
-    height: 92%;
-    opacity: 1;
-  }
-}
-.project-detail {
-  background-color: rebeccapurple;
-  display:none;
-  p, ul{
-    color: #eceeef;
-  }
-  min-height: 24rem;
-  padding: 2rem 2rem;
-  h3, h4{
-    color:white;
-  }
-  input[type="date"].form-control{
-    line-height: 1.25rem;
-  }
-  .card{
-    h4, p{
-      color: black;
-    }
-  }
-  .carousel{
-    width: 100%;
-    height: auto;
-  }
-}
+  
 
-#contact{
-  text-align: center;
+  #contact{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: lemonchiffon;
+  }
 }
-

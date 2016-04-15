@@ -29,7 +29,6 @@ window.setupHome = function(){
   };
 
   function scrollIntoViewIfNeeded(element){
-    $('#projects')[0].scrollIntoView();
     var elementLeftOffset = element.offset().left
     var elementRightOffset = elementLeftOffset + element.width()
 

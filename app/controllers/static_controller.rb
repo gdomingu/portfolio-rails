@@ -1,10 +1,10 @@
 class StaticController < ApplicationController
   def home
-    client = NasaApod::Client.new(api_key: 'DEMO_KEY')
+    client = NasaApod::Client.new(api_key: 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo')
     @nasa_apod = client.search(date: Date.today)
     @project_hash = {
       nasa_apod: {
-        thumbnail_url: @nasa_apod.try(:url)
+        thumbnail_url: @nasa_apod.url
       },
       tip_calc: {
         thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/tip_calc.png'
@@ -19,12 +19,16 @@ class StaticController < ApplicationController
         thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/hanoiss.png'
       }
     }
+    expires_in Time.now.end_of_day - Time.now, public: true
     render 'home'
   end
 
   def switch_date
-    client = NasaApod::Client.new(api_key: 'DEMO_KEY')
+    client = NasaApod::Client.new(api_key: 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo')
     @nasa_apod = client.search(date: date_params)
+    if @nasa_apod.code == 429
+      @error = "Sorry we've hit the rate limit for the API, please try again later."
+    end
   end
 
   private

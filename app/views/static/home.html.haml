@@ -1,60 +1,64 @@
-.header.clearfix
-  .nav
-    %ul.nav.nav-pills.pull-xs-right
-      %li.nav-item.active
-        %a.nav-link{href: "#about"}
-          about
-          %span.sr-only (current)
-      %li.nav-item
-        %a.nav-link{:href => "#projects"}projects
-      %li.nav-item
-        %a.nav-link{:href => "#contact"}contact
-.row#about
-  .col-md-3
-    = image_tag 'https://s3-us-west-2.amazonaws.com/gabe-random/Gabe_1.jpg', class: 'profile-picture'
-  .col-md-9
-    %h2 Gabe Dominguez
-    %p 
-      San Francisco native, software engineer, environmentalist, and citizen space explorer.
-    %p 
-      %strong Languages & Markup:
-      Ruby, JavaScript, Swift, HTML5, HAML, CSS3, SCSS, and SQL.
-    %p 
-      %strong Frameworks & Libraries:
-      Ruby on Rails, Sinatra, jQuery, AngularJS, React, jQueryUI, Bootstrap, Jinja, OAuth, Postgres, Rspec, Capybara, Selenium Webdriver, Phantom JS, AWS, APIs.
-    %p
-      %strong Tools:
-      JSON, GeoJSON, Git, Circle CI, HoneyBadger, Code Climate, Jira, Github, BitBucket, and Xcode.
-    %p
-      %strong High Level Skills:
-      OO programming, web application architecture, TDD, relational database design, agile process, cross team project management, pair programming.
+/ %nav.navbar.navbar-light
+/   %h2.navbar-brand G
+/   %ul.nav.navbar-nav.pull-xs-right
+/     %li.nav-item.active
+/       %a.nav-link{href: "#about"}
+/         ABOUT
+/         %span.sr-only (current)
+/     %li.nav-item
+/       %a.nav-link{:href => "#projects"}PROJECTS
+/     %li.nav-item
+/       %a.nav-link{:href => "#contact"}CONTACT
+#about
+  .container
+    .jumbotron
+      %h1.display-3 Hello, I'm Gabe
+      %p.lead 
+        San Francisco native, software engineer, environmentalist, and citizen space explorer.
+      = image_tag 'https://s3-us-west-2.amazonaws.com/gabe-random/Gabe_1.jpg', class: 'profile-picture img-circle'
+/ .row#skills
+/   %p 
+/     %strong Languages & Markup:
+/     Ruby, JavaScript, Swift, HTML5, HAML, CSS3, SCSS, and SQL.
+/   %p 
+/     %strong Frameworks & Libraries:
+/     Ruby on Rails, Sinatra, jQuery, AngularJS, React, jQueryUI, Bootstrap, Jinja, OAuth, Postgres, Rspec, Capybara, Selenium Webdriver, Phantom JS, AWS, APIs.
+/   %p
+/     %strong Tools:
+/     JSON, GeoJSON, Git, Circle CI, HoneyBadger, Code Climate, Jira, Github, BitBucket, and Xcode.
+/   %p
+/     %strong High Level Skills:
+/     OO programming, web application architecture, TDD, relational database design, agile process, cross team project management, pair programming.
+/ 233,224,235,1
 
+#projects
+  .container
+    .row
+      .col-md-12.text-xs-center
+        %h2.title Past Projects
+      .col-md-12
+        #project-carousel.carousel
+          .carousel-inner
+            #project-row
+              - @project_hash.keys.each do |name|
+                = render 'cover_item', project_name: name
+          %a{class: "left carousel-control", role: "button", 'data-slide' => "prev"}
+            %span{class: "icon-prev", 'aria-hidden'=> "true"}
+          %a{class: "right carousel-control",role: "button", 'data-slide' => "next"}
+            %span{class: "icon-next", 'aria-hidden'=> "true"}
 
-.row#projects
-  .col-md-12
-    %p.lead Past Projects
-  .col-md-12
-    #project-carousel.carousel
-      .carousel-inner
-        #project-row
-          - @project_hash.keys.each do |name|
-            = render 'cover_item', project_name: name
-      %a{class: "left carousel-control", role: "button", 'data-slide' => "prev"}
-        %span{class: "icon-prev", 'aria-hidden'=> "true"}
-      %a{class: "right carousel-control",role: "button", 'data-slide' => "next"}
-        %span{class: "icon-next", 'aria-hidden'=> "true"}
-
-- @project_hash.keys.each do |name|
-  .jumbotron.project-detail{id: "#{name}-detail"}
-    = render "#{name}_detail"
-
-.row#contact
-  .col-sm-12
-    %a{:href => 'mailto:gabe.p.dominguez@gmail.com'}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/email.png')
-    %a{:href => "https://github.com/gdomingu"}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/github.png')
-    %a{:href => "https://twitter.com/Gabudomingu"}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/twitter.png')
-    %a{:href => "http://www.linkedin.com/pub/gabriel-dominguez/29/495/667/"}
-      %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/linkedin.png')
+    - @project_hash.keys.each do |name|
+      .jumbotron.project-detail{id: "#{name}-detail"}
+        = render "#{name}_detail"
+#contact
+  .container
+    .row
+      .col-sm-12
+        %a{:href => 'mailto:gabe.p.dominguez@gmail.com'}
+          %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/email.png')
+        %a{:href => "https://github.com/gdomingu"}
+          %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/github.png')
+        %a{:href => "https://twitter.com/Gabudomingu"}
+          %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/twitter.png')
+        %a{:href => "http://www.linkedin.com/pub/gabriel-dominguez/29/495/667/"}
+          %img(src='https://s3-us-west-2.amazonaws.com/gabe-random/linkedin.png')
