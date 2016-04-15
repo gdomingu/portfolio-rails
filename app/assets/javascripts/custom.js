@@ -45,7 +45,9 @@ window.setupHome = function(){
     $(detail).fadeIn('slow');
   };
 
-  $('.cover-item img').first().trigger('click');
+  var first_project = $('.cover-item img').first();
+  addSelectedBorder(first_project);
+  fadeInDetail(first_project);
 };
 
 $(document).ready(window.setupHome);
