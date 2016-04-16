@@ -2,6 +2,9 @@ class StaticController < ApplicationController
   def home
     client = NasaApod::Client.new(api_key: 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo')
     @nasa_apod = client.search(date: Date.today)
+    if @nasa_apod.explanation.nil?
+      @nasa_apod = client.search(date: Date.yesterday)
+    end
     @project_hash = {
       nasa_apod: {
         thumbnail_url: @nasa_apod.url
