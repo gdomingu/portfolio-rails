@@ -26,7 +26,8 @@ class StaticController < ApplicationController
   def switch_date
     client = NasaApod::Client.new(api_key: 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo')
     @nasa_apod = client.search(date: date_params)
-    if @nasa_apod.code == 429
+
+    if @nasa_apod.try(:code) == 429
       @error = "Sorry we've hit the rate limit for the API, please try again later."
     end
   end
