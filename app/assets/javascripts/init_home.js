@@ -3,7 +3,9 @@ window.setupHome = function(){
   $('.cover-item img').on('click', function(){
     resetToDefault();
     var clickedCoverImage = new CoverImage($(this))
-    clickedCoverImage.select();
+    clickedCoverImage.select({
+      scroll: true
+    });
   });
 
   function resetToDefault(){
@@ -13,7 +15,9 @@ window.setupHome = function(){
   };
 
   var defaultCoverImage = new CoverImage($('.cover-item img').first());
-  defaultCoverImage.select();
+  defaultCoverImage.select({
+    scroll: false
+  });
   initializeCarouselControlListener();
 };
 

@@ -24,8 +24,10 @@ CoverImage.prototype.scrollIntoViewIfNeeded = function() {
   };
 };
 
-CoverImage.prototype.select = function() {
+CoverImage.prototype.select = function(args) {
   this.addSelectedBorder();
   this.fadeInDetail();
-  this.scrollIntoViewIfNeeded();
+  if (args['scroll'] == true){
+    this.scrollIntoViewIfNeeded();
+  }
 }
