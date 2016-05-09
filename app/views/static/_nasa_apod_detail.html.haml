@@ -16,7 +16,11 @@
       = submit_tag "Submit", class: 'btn btn-primary'
   .col-sm-8
     .card
-      =image_tag @nasa_apod.url, class: "card-img-top img-fluid", alt: @nasa_apod.title
+      -if @nasa_apod.media_type == 'video'
+        .embed-responsive.embed-responsive-16by9
+          %iframe.embed-responsive-item{src: @nasa_apod.url, allowfullscreen: true}
+      -else
+        =image_tag @nasa_apod.url, class: "card-img-top img-fluid", alt: @nasa_apod.title
       .card-block
         %h4.card-title
           = @nasa_apod.title
