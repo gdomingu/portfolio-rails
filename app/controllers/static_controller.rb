@@ -9,6 +9,9 @@ class StaticController < ApplicationController
       nasa_apod: {
         thumbnail_url: @nasa_apod.thumbnail_url
       },
+      django_tut: {
+        thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/django_tut.png'
+      },
       tip_calc: {
         thumbnail_url: 'https://s3-us-west-2.amazonaws.com/gabe-random/tip_calc.png'
       },
